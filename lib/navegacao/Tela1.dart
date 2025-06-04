@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meu_app/navegacao/Tela2.dart';
+//import 'package:meu_app/navegacao/Tela2.dart';
 
 class Tela1 extends StatelessWidget {
   const Tela1({super.key});
