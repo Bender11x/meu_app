@@ -1,6 +1,9 @@
 //import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:meu_app/dart.avancado/isolate/product_parse.dart';
+//import 'package:meu_app/dart.avancado/login.dart';
+//import 'package:meu_app/dart.avancado/stream/busca_com_stream.dart';
 //import 'package:meu_app/Botao.dart';
 //import 'package:meu_app/Debug.dart';
 //import 'package:meu_app/MaterialWidget/MyMaterial.dart';
@@ -8,7 +11,7 @@ import 'package:flutter/material.dart';
 //import 'package:meu_app/exercicios/ExercicioMaterial.dart';
 //import 'package:meu_app/exercicios/Loja.dart';
 //import 'package:meu_app/inherited/UserInfos.dart';
-import 'package:meu_app/navegacao/Routes.dart';
+//import 'package:meu_app/navegacao/Routes.dart';
 /* import 'package:meu_app/navegacao/Tela1.dart';
 import 'package:meu_app/stateful/Contador.dart';
 import 'package:meu_app/stateful/DarkMode.dart';
@@ -87,6 +90,13 @@ void main(){
 
   //navegando entre telas
   // runApp(MaterialApp(home: Tela1(),));
-  runApp(Routes());
+  //runApp(Routes());
+
+  //runApp(MaterialApp(home: Login()));
+
+  // runApp(MaterialApp(home: BuscaComStream()));
+
+  runApp(MaterialApp(home: ProductParse()));
 }
+
 

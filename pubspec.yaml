@@ -25,4 +25,5 @@ flutter:
         - asset: assets\fonts\AlumniSansSC-VariableFont_wght.ttf
   assets:
     - assets/images/
+    - assets/data.json
 

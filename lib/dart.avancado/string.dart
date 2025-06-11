@@ -44,24 +44,25 @@ mensagemChat().listen(
 } */
 
 //Exemplos com controle de erro try cath
-Stream<int> contarTempo()async*{
-  try{
-    for(int i = 0; i < 10;++){
+Stream<int> contarTempo() async* {
+  try {
+    for (int i = 0; i < 10; i++) {
       await Future.delayed(Duration(seconds: 1));
-      if(i == 3){
+      if (i == 3) {
         throw Exception("Erro ao contar número: $i");
       }
       yield i;
     }
-  }catch(e){
+  } catch (e) {
     print("Erro no contador de tempo: $e");
+    rethrow; // Garante que o erro seja enviado para o onError do listen
   }
 }
 
 void main(List<String> args) {
   contarTempo().listen(
     (event) => print("Número: $event"),
-    onError: (erro) => print(erro),
-    onDone: () => print("finalizado"),
-    );
+    onError: (erro) => print("Erro capturado no listen: $erro"),
+    onDone: () => print("Finalizado"),
+  );
 }
