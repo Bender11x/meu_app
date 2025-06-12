@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:isolate'; 
 
 import 'package:flutter/material.dart';
 
@@ -15,14 +16,17 @@ class _ProductParseState extends State<ProductParse> {
   @override
   void initState() {
     super.initState();
-    _items = loadJson();
+    _items = loadJson(); 
   }
 
   // Ler os dados do JSON
   Future<List<dynamic>> loadJson() async {
     final jsonString = await DefaultAssetBundle.of(context).loadString("assets/data.json");
-    final parsed = json.decode(jsonString);
-    return parsed['items'] as List<dynamic>;
+
+    return await Isolate.run(() {
+      final parsed = json.decode(jsonString);
+      return parsed['items'] as List<dynamic>;
+    });
   }
 
   @override
